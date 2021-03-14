@@ -1,17 +1,11 @@
 import React from 'react';
-import {
-    Link
-} from "react-router-dom";
 import styled from '@emotion/styled';
 import { makeStyles } from '@material-ui/core/styles';
 import { emphasize } from "@material-ui/core/styles/colorManipulator";
 import GitHubIcon from '@material-ui/icons/GitHub';
-// import {
-//     Grid,
-//     // FormRow,
-//     Paper
-// } from '@material-ui/core';
-import { CompList } from '../../constants/index'
+import ComputerIcon from '@material-ui/icons/Computer';
+
+import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -19,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     width: '100%',
+    height:'100%',
+    marginTop: '50px',
   },
   paper: {
     padding: theme.spacing(1),
@@ -34,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 
 export const Home = () => {
     const classes = useStyles();
-
     return (
         <Wrapper>
             <div className={classes.root}>
@@ -43,30 +38,59 @@ export const Home = () => {
                 <Grid container xl={12} spacing={3}>
 
                     <Grid item xs={4}>
-                        <Paper className={classes.paper} onClick={() => window.location.href("https://github.com/yabbbb/ReactWebLangCompetencies")}>
-                            <GitHubIcon/>
-                            <h3>React App</h3>
+                        <Paper className={classes.paper}>                            
+                            <Content>
+                                <h1>React App</h1>
+                                <span>Simple To Do app that uses local storage</span>
+                                <Redirects>
+                                    <Link href="https://github.com/yabbbb/ReactWebLangCompetencies" color="inherit">
+                                        <GitHubIcon/>
+                                    </Link>
+                                    <Link href="#" color="inherit">
+                                        <ComputerIcon/>
+                                    </Link>
+                                </Redirects>
+                            </Content>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={4}>
-                        <Paper className={classes.paper} onClick={() => window.location.href("https://github.com/yabbbb/VueApp")}>
-                            <GitHubIcon/>
-                            <h3>Vue App</h3>
+                        <Paper className={classes.paper}>
+                            <Content>
+                                <h1>Vue App</h1>
+                                <span>To Do app that uses local storage</span>
+                                <Redirects>
+                                    <Link href="https://github.com/yabbbb/VueApp" color="inherit">
+                                        <GitHubIcon/>
+                                    </Link>
+                                    <Link href="https://vue-todo-apps.herokuapp.com/" color="inherit">
+                                        <ComputerIcon/>
+                                    </Link>
+                                </Redirects>
+                            </Content>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={4}>
-                        <Paper className={classes.paper} onClick={() => window.location.href("https://github.com/yabbbb/Todo-Svelte")}>
-                            <GitHubIcon/>
-                            <h3>Svelte App</h3>
+                        <Paper className={classes.paper}>
+                            <Content>
+                                <h1>Svelte App</h1>
+                                <span>To Do app that uses local storage</span>
+                                <Redirects>
+                                    <Link href="https://github.com/yabbbb/Todo-Svelte" color="inherit">
+                                        <GitHubIcon/>
+                                    </Link>
+                                    <Link href="https://svelte-todo-apps.herokuapp.com/" color="inherit">
+                                        <ComputerIcon/>
+                                    </Link>
+                                </Redirects>
+                            </Content>
                         </Paper>
                     </Grid>
                 </Grid>
             </div>
 
-
-            
+      
             <div className={classes.root}>
                 <span>Web Languages || Competencies:</span>
                 <Grid container item xl={12} spacing={3}>
@@ -92,43 +116,28 @@ export const Home = () => {
                     </Grid>
                 </Grid>
             </div>
-
-            {/* <TextWrapper>
-
-
-
-                <Typography variant="h4">
-                    Click to view a competency
-                </Typography>
-
-                {
-                    CompList.map(i => {
-                        console.log('hey there', i)
-                        return (
-                        <Link to={i.path}>
-                            <div>{i.title}</div>
-                        </Link>
-                    )})
-                }
-            </TextWrapper> */}
         </Wrapper>
 
     )
 }
 
-const PaperWrapper = styled.div`
+const Content = styled.div`
     width: 100%;
     display:flex;
-    justify-content: space-around;
-
+    flex-direction:column;
+    align-items: flex-start;
+    text-align: left;
 `;
 
-const PaperInside = styled.div`
-    width: 30vw;
+const Redirects = styled.div`
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
     display:flex;
     justify-content: space-around;
 
 `;
+
 const Wrapper = styled.div`
     padding: 30px;
     display: flex;
@@ -137,13 +146,4 @@ const Wrapper = styled.div`
     align-items: center;
     color: #673ab7;
     height: 80%;
-`;
-
-const TextWrapper = styled.div`
-    display: flex;
-    height:70%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    z-index: 9;
 `;
