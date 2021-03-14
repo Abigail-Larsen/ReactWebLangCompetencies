@@ -43,21 +43,21 @@ export const Home = () => {
                 <Grid container xl={12} spacing={3}>
 
                     <Grid item xs={4}>
-                        <Paper className={classes.paper}>
+                        <Paper className={classes.paper} onClick={() => window.location.href("https://github.com/yabbbb/ReactWebLangCompetencies")}>
                             <GitHubIcon/>
                             <h3>React App</h3>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={4}>
-                        <Paper className={classes.paper}>
+                        <Paper className={classes.paper} onClick={() => window.location.href("https://github.com/yabbbb/VueApp")}>
                             <GitHubIcon/>
                             <h3>Vue App</h3>
                         </Paper>
                     </Grid>
 
                     <Grid item xs={4}>
-                        <Paper className={classes.paper}>
+                        <Paper className={classes.paper} onClick={() => window.location.href("https://github.com/yabbbb/Todo-Svelte")}>
                             <GitHubIcon/>
                             <h3>Svelte App</h3>
                         </Paper>
