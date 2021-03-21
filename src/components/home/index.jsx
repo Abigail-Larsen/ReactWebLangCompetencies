@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { makeStyles } from '@material-ui/core/styles';
+import { 
+    Typography 
+} from '@material-ui/core';
 import { emphasize } from "@material-ui/core/styles/colorManipulator";
 import GitHubIcon from '@material-ui/icons/GitHub';
 import ComputerIcon from '@material-ui/icons/Computer';
@@ -23,7 +26,12 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     "&:hover, &:focus": {
         backgroundColor: emphasize('#e3f2fd', 0.08),
-        cursor: 'pointer',
+    },
+  },  
+  icon: {
+    backgroundColor: 'pink',
+    "&:hover, &:focus": {
+        backgroundColor: emphasize('#e3f2fd', 2),
     },
   },
 }));
@@ -33,7 +41,7 @@ export const Home = () => {
     return (
         <Wrapper>
             <div className={classes.root}>
-                <span>Web Tools and Frameworks Competencies:</span>
+                <Typography variant='h4'>Web Tools and Frameworks Competencies:</Typography>
                 <br/>
                 <Grid container xl={12} spacing={3}>
 
@@ -44,10 +52,10 @@ export const Home = () => {
                                 <span>Simple To Do app that uses local storage</span>
                                 <Redirects>
                                     <Link href="https://github.com/yabbbb/ReactWebLangCompetencies" color="inherit">
-                                        <GitHubIcon/>
+                                        <GitHubIcon lassName={classes.icon}/>
                                     </Link>
                                     <Link href="#" color="inherit">
-                                        <ComputerIcon/>
+                                        <ComputerIcon lassName={classes.icon}/>
                                     </Link>
                                 </Redirects>
                             </Content>
@@ -75,7 +83,7 @@ export const Home = () => {
                         <Paper className={classes.paper}>
                             <Content>
                                 <h1>Svelte App</h1>
-                                <span>To Do app that uses local storage</span>
+                                <span>To Do app</span>
                                 <Redirects>
                                     <Link href="https://github.com/yabbbb/Todo-Svelte" color="inherit">
                                         <GitHubIcon/>
@@ -92,12 +100,23 @@ export const Home = () => {
 
       
             <div className={classes.root}>
-                <span>Web Languages || Competencies:</span>
+                <Typography variant='h4'>Web Languages || Competencies:</Typography>
+                <br/>
                 <Grid container item xl={12} spacing={3}>
                     <Grid item xs={4}>
                         <Paper className={classes.paper}>
-                            <GitHubIcon/>
-                            <h3>JS Server</h3>
+                            <Content>
+                                <h2>JS Server</h2>
+                                <span>Node server with Graphql & mysql db</span>
+                                <Redirects>
+                                    <Link href="https://github.com/yabbbb/nodeGraphQL" color="inherit">
+                                        <GitHubIcon/>
+                                    </Link>
+                                    <Link href="https://node-service-graphql.herokuapp.com/about" color="inherit">
+                                        <ComputerIcon/>
+                                    </Link>
+                                </Redirects>
+                            </Content>
                         </Paper>
                     </Grid>
 
@@ -110,8 +129,18 @@ export const Home = () => {
 
                     <Grid item xs={4}>
                         <Paper className={classes.paper}>
-                            <GitHubIcon/>
-                            <h3>Full Stack App</h3>
+                            <Content>
+                                <h2>Full Stack App</h2>
+                                <span>Voting app</span>
+                                <Redirects>
+                                    <Link href="https://github.com/yabbbb/auto-garage-image-client" color="inherit">
+                                        <GitHubIcon/>
+                                    </Link>
+                                    <Link href="https://auto-garage-image-client.herokuapp.com/" color="inherit">
+                                        <ComputerIcon/>
+                                    </Link>
+                                </Redirects>
+                            </Content>
                         </Paper>
                     </Grid>
                 </Grid>
