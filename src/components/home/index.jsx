@@ -49,7 +49,7 @@ export const Home = () => {
                         <Paper className={classes.paper}>                            
                             <Content>
                                 <h1>React App</h1>
-                                <span>Simple To Do app that uses local storage</span>
+                                <span>This website is built in React</span>
                                 <Redirects>
                                     <Link href="https://github.com/yabbbb/ReactWebLangCompetencies" color="inherit">
                                         <GitHubIcon lassName={classes.icon}/>
@@ -122,8 +122,16 @@ export const Home = () => {
 
                     <Grid item xs={4}>
                         <Paper className={classes.paper}>
-                            <GitHubIcon/>
-                            <h3>JS API</h3>
+                            <Content>
+                                <h2>JS API</h2>
+                                <span>Adobe PDF Exporter w/ Swagger Documentation</span>
+
+                                <Redirects>
+                                    <Link href="https://swagger.io/" color="inherit">
+                                        <ComputerIcon/>
+                                    </Link>                                    
+                                </Redirects>
+                            </Content>
                         </Paper>
                     </Grid>
 
